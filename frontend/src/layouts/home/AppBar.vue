@@ -70,7 +70,6 @@
         'Home',
         'About',
         'Contact',
-        'Pro',
       ],
     }),
   }
