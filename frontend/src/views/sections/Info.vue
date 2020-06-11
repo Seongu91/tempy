@@ -37,7 +37,6 @@
               cols="12"
               md="3"
             >
-              <instagram />
             </v-col>
           </v-row>
         </v-container>
@@ -52,7 +51,6 @@
 
     components: {
       InfoFeatures: () => import('@/components/InfoFeatures'),
-      Instagram: () => import('@/components/Instagram'),
     },
   }
 </script>

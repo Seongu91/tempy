@@ -36,6 +36,12 @@ const router = new Router({
           meta: { src: require('@/assets/contact.jpg') },
         },
         {
+          path: 'reference',
+          name: 'Reference',
+          component: () => import('@/views/reference/Reference.vue'),
+          meta: { src: require('@/assets/contact.jpg') },
+        },
+        {
           path: '*',
           name: 'FourOhFour',
           component: () => import('@/views/404/Index.vue'),
