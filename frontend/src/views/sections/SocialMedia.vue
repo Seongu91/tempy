@@ -1,52 +1,26 @@
 <template>
   <v-theme-provider dark>
-    <base-section
-      id="social"
-      class="accent text-center"
-      space="56"
-    >
-      <base-icon class="mb-8">
-        mdi-twitter
-      </base-icon>
-
-      <base-section-heading
-        color="transparent"
-        title="Social Media"
-      >
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi aspernatur recusandae aut repudiandae illo error obcaecati dolores voluptate, tempore.
-      </base-section-heading>
-
-      <a
-        class="d-inline-block mb-8"
-        href="https://vuetifyjs.com"
-        style="text-decoration: none;"
-        target="_blank"
-      >
-        https://vuetifyjs.com
-      </a>
-
-      <div class="py-4" />
-
-      <v-btn
-        class="font-weight-bold"
-        color="white"
-        href="https://twitter.com/vuetifyjs"
-        light
-        min-width="168"
-        target="_blank"
-        x-large
-      >
-        Follow Us
-
-        <v-icon right>
-          mdi-open-in-new
-        </v-icon>
-      </v-btn>
-    </base-section>
   </v-theme-provider>
 </template>
 
 <script>
+  import { createChart } from 'lightweight-charts';
+
+  const chart = createChart(document.body, { width: 400, height: 300 });
+  const lineSeries = chart.addLineSeries();
+  lineSeries.setData([
+      { time: '2019-04-11', value: 80.01 },
+      { time: '2019-04-12', value: 96.63 },
+      { time: '2019-04-13', value: 76.64 },
+      { time: '2019-04-14', value: 81.89 },
+      { time: '2019-04-15', value: 74.43 },
+      { time: '2019-04-16', value: 80.01 },
+      { time: '2019-04-17', value: 96.63 },
+      { time: '2019-04-18', value: 76.64 },
+      { time: '2019-04-19', value: 81.89 },
+      { time: '2019-04-20', value: 74.43 },
+  ]);
+
   export default {
     name: 'SectionNews',
 
