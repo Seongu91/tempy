@@ -20,16 +20,14 @@
       lineSeries.setData(data);
     },
     methods:{
-      changeData : function(data){
-
+      addData : function(data){
+        const lineSeries = this.chart.addLineSeries();
+        lineSeries.setData(data);
       }
     },
     watch: {
-      checkData : function(data){
-        const lineSeries = this.chart.addLineSeries();
-        let datas = data
-        lineSeries.setData(datas);
-
+      chartdata : function(data){
+        this.addData(data);
       }
     }
   }
