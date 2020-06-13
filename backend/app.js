@@ -1,11 +1,16 @@
+require('dotenv').config();
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require('mongoose');
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var getDataRouter = require('./routes/getdata');
 
 var app = express();
 
@@ -19,8 +24,17 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Node.js의 native Promise 사용
+mongoose.Promise = global.Promise;
+
+// CONNECT TO MONGODB SERVER
+mongoose.connect(process.env.MONGO_URI, { useMongoClient: true })
+  .then(() => console.log('Successfully connected to mongodb'))
+  .catch(e => console.error(e));
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/getdata', getDataRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
