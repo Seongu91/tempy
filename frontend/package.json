@@ -9,7 +9,7 @@
     "postversion": "node scripts/postversion.js"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "lightweight-charts": "^3.0.0",
     "vue": "^2.6.11",
     "vue-meta": "^2.3.3",
